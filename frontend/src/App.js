@@ -5,18 +5,18 @@ import Login from "./pages/Login";
 
 function App() {
   return (
+    // ...existing code...
     <Router>
       <Routes>
         {/* Login page */}
         <Route path="/login" element={<Login />} />
-
         {/* Dashboard page */}
         <Route path="/dashboard" element={<Dashboard />} />
-
         {/* Default route (redirect to login) */}
         <Route path="/" element={<Login />} />
       </Routes>
     </Router>
+// ...existing code...
   );
 }
 

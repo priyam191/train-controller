@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import TrainMap from "../components/TrainMap";
 
-const API_URL = "http://localhost:4000/api";
+const API_URL = "https://train-controller-backend.onrender.com";
 
 function KPI({ title, value, suffix }) {
   return (

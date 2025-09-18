@@ -18,7 +18,7 @@ const stationCoords = {
 };
 
 // API base
-const API_URL = "http://localhost:4000/api"; // backend route
+const API_URL = "https://train-controller-backend.onrender.com"; // backend route
 
 export default function TrainMap() {
   const [trains, setTrains] = useState([]);
