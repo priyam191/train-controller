@@ -1,6 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  // Handle logout function
+  const handleLogout = (e) => {
+    e.preventDefault();
+    // Clear authentication data from localStorage
+    localStorage.removeItem('controllerName');
+    // Redirect to login page
+    navigate('/login', { replace: true });
+  };
   return (
     <nav style={{display: "flex", justifyContent: "space-between", alignItems: "center"}} className="w-full flex items-center justify-between px-6 py-3 bg-gray-900 shadow-md">
       {/* Left side: Logo + Title */}
@@ -48,8 +59,8 @@ export default function Navbar() {
             }}>
           What-If 
         </a>
-        <a
-            href="/login"
+        <button
+            onClick={handleLogout}
             style={{
                 display: "inline-block",
                 textDecoration: "none",
@@ -62,12 +73,14 @@ export default function Navbar() {
                 marginRight: "20px",          // distance from right
                 boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.15)",
                 transition: "all 0.3s ease",
+                border: "none",
+                cursor: "pointer"
             }}
             onMouseOver={(e) => (e.target.style.backgroundColor = "#1E40AF")}
             onMouseOut={(e) => (e.target.style.backgroundColor = "#2563eb")}
             >
             Logout
-        </a>
+        </button>
 
         
 
