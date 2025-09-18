@@ -1,0 +1,78 @@
+{
+  "trains": [
+    {
+      "train_no": "12301",
+      "name": "Shatabdi Express",
+      "type": "Express",
+      "priority": "High",
+      "status": "Running",
+      "current_station": "Santragachi",
+      "next_station": "Kharagpur",
+      "delay_minutes": 0,
+      "scheduled_arrival": "2025-09-18T11:30:00",
+      "scheduled_departure": "2025-09-18T11:35:00",
+      "actual_arrival": null,
+      "actual_departure": null
+    },
+    {
+      "train_no": "18011",
+      "name": "Howrah–Chakradharpur Passenger",
+      "type": "Passenger",
+      "priority": "Low",
+      "status": "Running",
+      "current_station": "Uluberia",
+      "next_station": "Kharagpur",
+      "delay_minutes": 12,
+      "scheduled_arrival": "2025-09-18T12:00:00",
+      "scheduled_departure": "2025-09-18T12:10:00",
+      "actual_arrival": null,
+      "actual_departure": null
+    },
+    {
+      "train_no": "22907",
+      "name": "Freight Goods Special",
+      "type": "Freight",
+      "priority": "Medium",
+      "status": "Waiting",
+      "current_station": "Kharagpur",
+      "next_station": "Uluberia",
+      "delay_minutes": 20,
+      "scheduled_arrival": "2025-09-18T12:30:00",
+      "scheduled_departure": "2025-09-18T12:45:00",
+      "actual_arrival": null,
+      "actual_departure": null
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "C001",
+      "section_id": "SEC-001",
+      "trains_involved": ["12301", "12841"],
+      "conflict_type": "Same track overlap",
+      "detected_time": "2025-09-18T11:25:00",
+      "severity": "High",
+      "suggestions": [
+        "Hold Passenger train 12301 for 5 minutes at Santragachi",
+        "Allow Shatabdi Express 12841 to pass first"
+      ]
+    },
+    {
+      "conflict_id": "C002",
+      "section_id": "SEC-001",
+      "trains_involved": ["18011", "22907"],
+      "conflict_type": "Platform clash at Kharagpur",
+      "detected_time": "2025-09-18T12:20:00",
+      "severity": "Medium",
+      "suggestions": [
+        "Reroute Freight train 22907 to alternate platform",
+        "Delay Passenger train 18011 departure by 10 minutes"
+      ]
+    }
+  ],
+  "kpis": {
+    "average_delay_minutes": 9,
+    "punctuality_percent": 82,
+    "throughput_trains_per_hour": 18,
+    "utilization_percent": 76
+  }
+}
