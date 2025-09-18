@@ -50,10 +50,32 @@ export default function Login() {
         }}
       >
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/55/Indian_Railways_logo.svg"
-          alt="Logo"
-          style={{ width: "60px", marginBottom: "10px" }}
+          src="/media/logo.jpg"
+          alt="Margdarshak Logo"
+          style={{ 
+            width: "80px", 
+            height: "80px", 
+            marginBottom: "10px",
+            borderRadius: "8px",
+            objectFit: "contain"
+          }}
+          onError={(e) => {
+            // Fallback to railway emoji if local logo fails
+            e.target.style.display = 'none';
+            e.target.nextSibling.style.display = 'block';
+          }}
         />
+        <div 
+          style={{ 
+            fontSize: '60px', 
+            display: 'none',
+            lineHeight: '60px',
+            height: '60px',
+            marginBottom: '10px'
+          }}
+        >
+          🚆
+        </div>
         <h2 style={{ marginBottom: "20px" }}>Controller Login</h2>
 
         <form onSubmit={handleLogin}>

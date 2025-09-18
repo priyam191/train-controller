@@ -39,6 +39,7 @@ function AppContent() {
     }
   }, [navigate, location.pathname]);
 
+
   return (
     <Routes>
       {/* Public routes */}
